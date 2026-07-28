@@ -26,6 +26,10 @@ Load generators always use **`aws-c7i-large`** (`loadgen_profile` in profiles.js
 1. `aws___get_regional_availability` — confirm all Phase 1 instance types in target region.
 2. `aws___call_aws` — `ec2 describe-vpcs`, `describe-subnets`; pick same-AZ subnets.
 3. Pin AMIs in `profiles.json` via `ec2 describe-images` (replace `ami-PLACEHOLDER-*`).
+   Those placeholders are intentional until preflight; do not launch campaigns against them.
+4. Build or locate `photon-bench` from the photon core tree and export
+   `PHOTON_BENCH_BIN` if it is not at `../photon/target/release/photon-bench`
+   relative to this repo.
 
 ## Provision fleet (single campaign)
 

@@ -34,7 +34,14 @@ scp_tar "$SERVER_IP"
 scp -i "$SSH_KEY" -o StrictHostKeyChecking=no "$REPO_ROOT/infra/aws/mcp/profiles.json" "${SSH_USER}@${SERVER_IP}:/tmp/profiles.json"
 remote_bootstrap_server "$SERVER_IP"
 ssh_cmd "$SERVER_IP" "sudo mv /tmp/profiles.json $INSTALL_DIR/profiles.json"
-scp -i "$SSH_KEY" -o StrictHostKeyChecking=no "$REPO_ROOT/../photon/target/release/photon-bench" "${SSH_USER}@${SERVER_IP}:/tmp/photon-bench"
+# Optional substrate helper from the photon core checkout (not this repo).
+# Override with PHOTON_BENCH_BIN=/path/to/photon-bench when the sibling tree is elsewhere.
+PHOTON_BENCH_BIN="${PHOTON_BENCH_BIN:-$REPO_ROOT/../photon/target/release/photon-bench}"
+if [[ ! -x "$PHOTON_BENCH_BIN" ]]; then
+  echo "error: photon-bench not found at $PHOTON_BENCH_BIN (set PHOTON_BENCH_BIN)" >&2
+  exit 1
+fi
+scp -i "$SSH_KEY" -o StrictHostKeyChecking=no "$PHOTON_BENCH_BIN" "${SSH_USER}@${SERVER_IP}:/tmp/photon-bench"
 ssh_cmd "$SERVER_IP" "sudo mv /tmp/photon-bench $INSTALL_DIR/photon-bench && sudo chmod +x $INSTALL_DIR/photon-bench"
 run_substrate "$SERVER_IP" "$PROFILE"
 run_pls_connection_campaign "$LG_HOST" "$SERVER_IP" "$SERVER_PRIVATE" "$PROFILE" "$DURATION"
