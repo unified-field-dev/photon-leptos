@@ -263,7 +263,7 @@ pub fn subscribe_ws(
     let status = Signal::derive(move || WsConnectionStatus::from(ready_state.get()));
     let close_fn: Arc<dyn Fn() + Send + Sync> = {
         let close = socket.close.clone();
-        Arc::new(move || close())
+        Arc::new(close)
     };
 
     // Keep connection control handles alive for the reactive owner lifetime.
@@ -346,9 +346,9 @@ where
 /// Returns `Resource<Option<Result<Vec<U>, E>>>` — `None` while loading.
 ///
 /// **Best-effort live tail:** events that arrive while the initial snapshot is
-/// still loading are buffered and flushed when the fetch completes `Ok`. There
-/// is no cursor, dedupe, or reconnect replay — use [`SyncStrategy::Refetch`](crate::SyncStrategy::Refetch)
-/// when the server function must remain authoritative.
+/// still loading are buffered and flushed when the fetch completes `Ok`. Prefer
+/// [`SyncStrategy::Refetch`](crate::SyncStrategy::Refetch) after reconnect when the
+/// server function must remain authoritative.
 pub fn synced_resource_append<F, Fut, U, E>(
     fetcher: F,
     opts: SyncedResourceOpts,

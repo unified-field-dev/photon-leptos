@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Boot Axum + Leptos with mem Photon and inventory WS routes.
 
 use std::sync::Arc;

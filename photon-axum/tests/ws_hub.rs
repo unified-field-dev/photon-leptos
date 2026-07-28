@@ -2,7 +2,7 @@
 //!
 //! Photon process globals are exclusive — tests take `PHOTON_TEST_LOCK`.
 
-#![cfg(feature = "ssr")]
+#![cfg(feature = "runtime")]
 #![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use std::sync::Arc;

@@ -17,6 +17,7 @@ env:
   CARGO_BUILD_JOBS: 1
   RUST_BACKTRACE: 1
   CARGO_NET_GIT_FETCH_WITH_CLI: true
+  RUSTFLAGS: -D warnings
 
 jobs:
   fmt:

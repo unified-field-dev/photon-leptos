@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Standalone bench server binary.
 
 #![allow(

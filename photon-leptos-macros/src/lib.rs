@@ -24,7 +24,7 @@
 //!
 //! Requires `photon-leptos` features `hydrate` and/or `ssr` on the app crate.
 
-#![warn(missing_docs)]
+#![deny(missing_docs)]
 
 mod synced;
 

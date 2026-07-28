@@ -77,7 +77,7 @@ replacement group created under the same key.
 
 ## Docs
 
-`cargo doc -p photon-axum --features ssr --open`
+`cargo doc -p photon-axum --features runtime --open`
 
 ## Features
 

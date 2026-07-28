@@ -317,7 +317,7 @@ dependencies = [
 
 [[package]]
 name = "brokered-live-ui"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2011,7 +2011,7 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 
 [[package]]
 name = "photon-axum"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "axum",
  "futures",
@@ -2075,7 +2075,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "axum",
  "cfg-if",
@@ -2098,7 +2098,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos-bench"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2120,7 +2120,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos-e2e-demo"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2148,7 +2148,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos-macros"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -2355,7 +2355,7 @@ dependencies = [
 
 [[package]]
 name = "quickstart-refetch"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2659,7 +2659,7 @@ checksum = "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
 
 [[package]]
 name = "replace-and-append-demo"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2897,7 +2897,7 @@ checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
 name = "secure-refetch-host"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "axum",

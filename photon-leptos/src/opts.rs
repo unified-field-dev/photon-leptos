@@ -3,7 +3,7 @@
 //! [`SyncStrategy`] and [`SyncedResourceOpts`] control how WebSocket events update
 //! UI state when using [`crate::synced_resource`] or macro-generated hooks.
 
-#![warn(missing_docs)]
+#![deny(missing_docs)]
 
 /// How the resource responds to incoming Photon events.
 ///
@@ -18,7 +18,8 @@
 /// `#[synced]` macro calls `synced_resource_replace_result` so events
 /// deserialize as `T` and set `Ok(T)`.
 ///
-/// Append is **not** durable list replication: no cursor, dedupe, or reconnect replay.
+/// Append is a best-effort live tail: buffers during the initial snapshot; prefer
+/// [`Refetch`](Self::Refetch) after reconnect when the full list must match the server.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub enum SyncStrategy {
     /// Re-call the server function to fetch fresh data.

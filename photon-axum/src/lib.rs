@@ -26,8 +26,8 @@
 //!
 //! - [`axum_ws`] — auth traits, descriptors, route registration, WS handler
 
-#![cfg(feature = "ssr")]
-#![warn(missing_docs)]
+#![cfg(feature = "runtime")]
+#![deny(missing_docs)]
 
 pub mod axum_ws;
 

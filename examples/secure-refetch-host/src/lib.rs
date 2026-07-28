@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Secure Origin + session extractor teaching host.
 
 pub mod app;

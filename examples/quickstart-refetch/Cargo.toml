@@ -56,7 +56,7 @@ ssr = [
     "leptos/ssr",
     "leptos_router/ssr",
     "photon-leptos/ssr",
-    "photon-axum/ssr",
+    "photon-axum/runtime",
 ]
 
 [[bin]]

@@ -22,9 +22,9 @@ only (never the `?key=` value).
 |----------|----------|
 | **Refetch** | Supported — server function is authoritative |
 | **Replace** | Experimental — payload is `T` or `Ok` of `Result<T, E>` (`synced_resource_replace_result`) |
-| **Append** | Best-effort live tail — buffers during initial load; no cursor / replay |
+| **Append** | Best-effort live tail — buffers during initial load; use Refetch after reconnect for authoritative lists |
 
-The browser WebSocket is ephemeral. Prefer Refetch when exact state matters across reconnect.
+Browser WebSocket is an ephemeral invalidation / live-update channel. Prefer Refetch when exact state matters across reconnect.
 
 ## Client API map
 
@@ -42,4 +42,4 @@ The browser WebSocket is ephemeral. Prefer Refetch when exact state matters acro
 | Feature | Purpose |
 |---------|---------|
 | `hydrate` | Browser WebSocket helpers (`leptos-use`) |
-| `ssr` | Server re-exports of `photon-axum` + inventory routes |
+| `ssr` | Leptos SSR + server re-exports of `photon-axum` (`runtime`) + inventory routes |

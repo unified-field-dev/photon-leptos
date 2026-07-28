@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Brokered (NATS) Photon + Leptos refetch host.
 
 pub mod app;

@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Boot with Origin allowlist + session auth.
 
 use std::sync::Arc;

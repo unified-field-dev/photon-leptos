@@ -84,16 +84,17 @@ manual_let_else = "warn"
 unnecessary_wraps = "warn"
 trivially_copy_pass_by_ref = "warn"
 
-# Restriction — idiomatic production code
-unwrap_used = "warn"
-expect_used = "warn"
-dbg_macro = "warn"
-print_stdout = "warn"
-print_stderr = "warn"
+# Restriction — idiomatic production code (sibling kits deny these)
+unwrap_used = "deny"
+expect_used = "deny"
+dbg_macro = "deny"
+print_stdout = "deny"
+print_stderr = "deny"
 todo = "warn"
 unimplemented = "warn"
 
 [workspace.lints.rust]
+missing_docs = "deny"
 # leptos-lints (Dylint) names are unknown to rustc/clippy alone
 unknown_lints = "allow"
 leptos_print_stdout = "deny"

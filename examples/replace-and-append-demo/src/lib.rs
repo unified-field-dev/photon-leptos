@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Replace / Append strategy teaching host.
 
 pub mod app;

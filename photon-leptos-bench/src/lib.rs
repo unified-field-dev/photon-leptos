@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! photon-leptos integration benchmarks (BM-PLS*).
 
 #![allow(

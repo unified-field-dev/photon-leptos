@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Boot replace/append demo.
 
 use std::sync::Arc;

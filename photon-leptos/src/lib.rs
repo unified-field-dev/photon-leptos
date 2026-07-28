@@ -3,7 +3,7 @@
 //! photon-leptos keeps Leptos `Resource`s in sync with Photon events via WebSocket,
 //! so UI updates when relevant events are published — without hand-rolling WS wiring.
 //!
-//! See the [repository README](https://github.com/unified-field-dev/photon-leptos) for a
+//! See the [repository README](https://github.com/deathbreakfast/photon-leptos) for a
 //! quick-start hero example.
 //!
 //! ## Architecture
@@ -40,10 +40,10 @@
 //!
 //! ## Guarantees
 //!
-//! - **0.1 experimental** — browser WebSocket is ephemeral; no browser cursor/replay.
-//! - **Refetch** — supported; server function remains authoritative.
+//! - **0.1 experimental** — browser WebSocket is an ephemeral invalidation / live-update channel.
+//! - **Refetch** — supported; server function remains authoritative (preferred after reconnect).
 //! - **Replace** — experimental; payload is `T` or the `Ok` type of `Result<T, E>`.
-//! - **Append** — best-effort live tail (buffers during initial load); no durable list replication.
+//! - **Append** — best-effort live tail (buffers during initial load); pair with Refetch for authoritative lists.
 //! - **WebSocket endpoint** — server forwards topic streams to browser clients.
 //! - **Type-safe topics** — use [`photon::topic`] types for publish and subscribe.
 //! - **Declarative API** — [`synced`] macro or `synced_resource` helpers (hydrate).

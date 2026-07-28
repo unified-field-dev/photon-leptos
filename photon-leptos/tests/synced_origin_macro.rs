@@ -1,6 +1,7 @@
 //! Origin gate on real `#[synced]` codegen (not a hand-mirrored probe).
 
 #![cfg(feature = "ssr")]
+#![allow(missing_docs)]
 #![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use std::sync::Arc;

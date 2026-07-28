@@ -4,7 +4,7 @@ version = "0.1.1"
 edition = "2021"
 description = "Leptos integration for Photon events — synced resources and WebSocket real-time updates"
 license = "MIT"
-repository = "https://github.com/unified-field-dev/photon-leptos"
+repository = "https://github.com/deathbreakfast/photon-leptos"
 
 [lints]
 workspace = true
@@ -35,7 +35,7 @@ ssr = [
     "dep:photon",
     "dep:photon-axum",
     "photon/runtime",
-    "photon-axum/ssr",
+    "photon-axum/runtime",
     "dep:tokio",
     "dep:quark",
 ]

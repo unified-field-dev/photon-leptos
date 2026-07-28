@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Boot NATS-backed Photon under Leptos; skip when env unset.
 
 use std::sync::Arc;

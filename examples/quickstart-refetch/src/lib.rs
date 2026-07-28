@@ -1,3 +1,4 @@
+#![allow(missing_docs)]
 //! Quickstart host: mem Photon + WS refetch (broadcast, auth, key, status).
 
 pub mod app;
