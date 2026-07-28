@@ -9,8 +9,9 @@ use crate::counter::{
 
 /// Mirror query params into cookies for client-side server-fn refetches.
 fn sync_cookies(namespace: &str, user: Option<&str>, key: Option<&str>) {
-    #[cfg(feature = "hydrate")]
+    #[cfg(all(feature = "hydrate", target_arch = "wasm32"))]
     {
+        use leptos::web_sys;
         use wasm_bindgen::JsCast;
         if let Some(document) = web_sys::window()
             .and_then(|w| w.document())
@@ -163,10 +164,9 @@ fn KeyOnlyView(
     let trigger = RwSignal::new(0u64);
     #[cfg(feature = "hydrate")]
     {
-        let key_for_ws = key_now.clone();
         let _ws = photon_leptos::subscribe_ws(
             "/ws/counter-keyed",
-            Some(key_for_ws.as_str()).filter(|k| !k.is_empty()),
+            Some(key_now.as_str()).filter(|k| !k.is_empty()),
             move |_| {
                 trigger.update(|n| *n += 1);
             },
@@ -202,10 +202,9 @@ fn AuthKeyView(
     let trigger = RwSignal::new(0u64);
     #[cfg(feature = "hydrate")]
     {
-        let key_for_ws = key_now.clone();
         let _ws = photon_leptos::subscribe_ws(
             "/ws/counter-auth-key",
-            Some(key_for_ws.as_str()).filter(|k| !k.is_empty()),
+            Some(key_now.as_str()).filter(|k| !k.is_empty()),
             move |_| {
                 trigger.update(|n| *n += 1);
             },

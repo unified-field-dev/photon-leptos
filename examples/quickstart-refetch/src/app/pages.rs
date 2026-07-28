@@ -9,8 +9,9 @@ use crate::synced::{
 };
 
 fn sync_cookies(user: Option<&str>, key: Option<&str>) {
-    #[cfg(feature = "hydrate")]
+    #[cfg(all(feature = "hydrate", target_arch = "wasm32"))]
     {
+        use leptos::web_sys;
         use wasm_bindgen::JsCast;
         if let Some(document) = web_sys::window()
             .and_then(|w| w.document())
@@ -58,11 +59,8 @@ fn BroadcastView() -> impl IntoView {
     let trigger = RwSignal::new(0u64);
     #[cfg(feature = "hydrate")]
     {
-        let handle = photon_leptos::subscribe_ws("/ws/counter", None, {
-            let trigger = trigger;
-            move |_| {
-                trigger.update(|n| *n += 1);
-            }
+        let handle = photon_leptos::subscribe_ws("/ws/counter", None, move |_| {
+            trigger.update(|n| *n += 1);
         });
         Effect::new({
             let status = handle.status;
@@ -152,10 +150,9 @@ fn KeyView(key: impl Fn() -> String + Send + Sync + Clone + 'static) -> impl Int
     let trigger = RwSignal::new(0u64);
     #[cfg(feature = "hydrate")]
     {
-        let key_for_ws = key_now.clone();
         let _ws = photon_leptos::subscribe_ws(
             "/ws/counter-keyed",
-            Some(key_for_ws.as_str()).filter(|k| !k.is_empty()),
+            Some(key_now.as_str()).filter(|k| !k.is_empty()),
             move |_| {
                 trigger.update(|n| *n += 1);
             },

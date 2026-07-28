@@ -3,7 +3,7 @@
 //! photon-leptos keeps Leptos `Resource`s in sync with Photon events via WebSocket,
 //! so UI updates when relevant events are published — without hand-rolling WS wiring.
 //!
-//! See the [repository README](https://github.com/deathbreakfast/photon-leptos) for a
+//! See the [repository README](https://github.com/unified-field-dev/photon-leptos) for a
 //! quick-start hero example.
 //!
 //! ## Architecture

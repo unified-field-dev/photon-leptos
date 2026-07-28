@@ -9,6 +9,7 @@ use std::time::Duration;
 
 use axum::Router;
 use http::StatusCode;
+use leptos::prelude::Update;
 use photon::Photon;
 use photon_leptos::server::HasPhoton;
 use photon_leptos::synced;

@@ -57,5 +57,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - E2E counter demo and Playwright harness under `e2e/`.
 - `photon-leptos-bench` load experiments and performance study notes.
 
-[Unreleased]: https://github.com/deathbreakfast/photon-leptos/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/deathbreakfast/photon-leptos/releases/tag/v0.1.0
+[Unreleased]: https://github.com/unified-field-dev/photon-leptos/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/unified-field-dev/photon-leptos/releases/tag/v0.1.0

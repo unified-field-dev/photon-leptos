@@ -57,7 +57,7 @@ jobs:
 
       - name: cargo clippy (workspace)
         working-directory: photon-leptos
-        run: cargo clippy --workspace --all-targets --features ssr -- -D warnings
+        run: cargo clippy --workspace --all-targets --all-features -- -D warnings
 
   leptos-lints:
     runs-on: ubuntu-latest
@@ -144,7 +144,7 @@ jobs:
 
       - name: cargo test (integration crates)
         working-directory: photon-leptos
-        run: cargo test -p photon-axum -p photon-leptos -p photon-leptos-macros -p photon-leptos-bench --features ssr
+        run: cargo test -p photon-axum -p photon-leptos -p photon-leptos-macros -p photon-leptos-bench --all-features
 
   docs:
     runs-on: ubuntu-latest

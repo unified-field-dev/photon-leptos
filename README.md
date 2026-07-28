@@ -1,15 +1,9 @@
 # photon-leptos
 
-[![CI](https://github.com/deathbreakfast/photon-leptos/actions/workflows/ci.yml/badge.svg)](https://github.com/deathbreakfast/photon-leptos/actions/workflows/ci.yml)
-[![crates.io](https://img.shields.io/crates/v/photon-leptos.svg)](https://crates.io/crates/photon-leptos)
-[![docs.rs](https://docs.rs/photon-leptos/badge.svg)](https://docs.rs/photon-leptos)
-[![crates.io](https://img.shields.io/crates/v/photon-axum.svg)](https://crates.io/crates/photon-axum)
-[![docs.rs](https://docs.rs/photon-axum/badge.svg)](https://docs.rs/photon-axum)
-[![crates.io](https://img.shields.io/crates/v/photon-leptos-macros.svg)](https://crates.io/crates/photon-leptos-macros)
-[![docs.rs](https://docs.rs/photon-leptos-macros/badge.svg)](https://docs.rs/photon-leptos-macros)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/unified-field-dev/photon-leptos/actions/workflows/ci.yml/badge.svg)](https://github.com/unified-field-dev/photon-leptos/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[GitHub](https://github.com/deathbreakfast/photon-leptos) · [photon](https://github.com/unified-field-dev/photon) · [docs.rs](https://docs.rs/photon-leptos)
+[GitHub](https://github.com/unified-field-dev/photon-leptos) · [photon](https://github.com/unified-field-dev/photon) · `cargo doc -p photon-leptos --open`
 
 Leptos + Axum integration built on [photon](https://github.com/unified-field-dev/photon) — browser clients subscribe to topics over WebSockets and refetch synced server functions when events arrive.
 
@@ -116,7 +110,8 @@ Client-initiated writes can also publish the same topic; the diagram highlights 
 
 ## Getting started
 
-Add the crates from crates.io:
+Add the crates from crates.io (published line is `0.1.0`; this workspace may be
+ahead on `main` — use git if you need unreleased fixes):
 
 ```toml
 [dependencies]
@@ -186,10 +181,7 @@ CI runs on every push and PR ([`.github/workflows/ci.yml`](.github/workflows/ci.
 
 ```bash
 cargo fmt --all -- --check
-cargo clippy --workspace --all-targets --features ssr -- -D warnings
-# Prefer `--features ssr` (CI). `--all-features` enables hydrate+ssr together and fails on
-# Leptos teaching hosts (`web_sys`) and dual-feature integration tests; use separate
-# hydrate / ssr feature runs instead.
+cargo clippy --workspace --all-targets --all-features -- -D warnings
 # Requires: cargo install cargo-dylint --locked --version 6.0.1
 #           cargo install dylint-link --locked --version 6.0.1
 CARGO_RESOLVER_INCOMPATIBLE_RUST_VERSIONS=fallback \
@@ -197,7 +189,7 @@ CARGO_RESOLVER_INCOMPATIBLE_RUST_VERSIONS=fallback \
 CARGO_RESOLVER_INCOMPATIBLE_RUST_VERSIONS=fallback \
   cargo dylint --all -p photon-leptos-e2e-demo --no-deps -- --features hydrate --target wasm32-unknown-unknown
 cargo audit
-cargo test -p photon-axum -p photon-leptos -p photon-leptos-macros -p photon-leptos-bench --features ssr
+cargo test -p photon-axum -p photon-leptos -p photon-leptos-macros -p photon-leptos-bench --all-features
 RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
 cargo package -p photon-leptos-macros --list
 cargo package -p photon-axum --list

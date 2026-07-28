@@ -32,7 +32,7 @@ Project maintainers may remove, edit, or reject comments, commits, code, issues,
 
 If you experience or witness unacceptable behavior, report it privately to the maintainers through the security/contact guidance in `SECURITY.md` or the repository contact channel listed at:
 
-https://github.com/deathbreakfast/photon-leptos
+https://github.com/unified-field-dev/photon-leptos
 
 Please include links, screenshots, or other context that will help maintainers review the report.
 

@@ -10,8 +10,8 @@ Please **do not** open a public GitHub issue for security-sensitive reports.
 
 Prefer one of the following:
 
-1. **GitHub Security Advisories** — use [Report a vulnerability](https://github.com/deathbreakfast/photon-leptos/security/advisories/new) on this repository when available.
-2. Contact the maintainers privately via the repository owner listed at https://github.com/deathbreakfast/photon-leptos.
+1. **GitHub Security Advisories** — use [Report a vulnerability](https://github.com/unified-field-dev/photon-leptos/security/advisories/new) on this repository when available.
+2. Contact the maintainers privately via the repository owner listed at https://github.com/unified-field-dev/photon-leptos.
 
 Include:
 

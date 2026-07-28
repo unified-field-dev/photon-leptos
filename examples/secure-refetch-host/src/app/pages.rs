@@ -5,8 +5,9 @@ use leptos::prelude::*;
 use crate::synced::{secure_counter_get, secure_increment, sign_in, SessionUser};
 
 fn set_session_cookie(cookie: &str) {
-    #[cfg(feature = "hydrate")]
+    #[cfg(all(feature = "hydrate", target_arch = "wasm32"))]
     {
+        use leptos::web_sys;
         use wasm_bindgen::JsCast;
         if let Some(document) = web_sys::window()
             .and_then(|w| w.document())
