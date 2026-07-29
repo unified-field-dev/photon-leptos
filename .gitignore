@@ -18,6 +18,3 @@ playwright/.cache/
 
 # Regenerable AWS MCP bench release artifact (see infra/aws/mcp/RUNBOOK.md)
 release.tar.gz
-
-# Local Sentrux quality-gate config (dev artifact; not part of upstream)
-.sentrux/
