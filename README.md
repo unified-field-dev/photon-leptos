@@ -23,7 +23,7 @@ pub struct NotificationUpdated { /* ... */ }
 )]
 pub async fn list_notifications() -> Result<Vec<Notification>, ServerFnError> { /* ... */ }
 
-// Somewhere else on the server — not the viewing client's click:
+// Somewhere else on the server (for example after an import job finishes):
 async fn on_import_job_finished(...) {
     NotificationUpdated { /* ... */ }.publish().await?;
 }

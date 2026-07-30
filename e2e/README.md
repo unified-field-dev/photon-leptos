@@ -2,7 +2,7 @@
 
 **Status:** implemented — browser tests under `e2e/tests/` exercise a minimal Leptos + Axum harness in `e2e/demo/`.
 
-For **developer demos** (copy-paste teaching hosts), see [`examples/`](../examples/) — `e2e/demo` is not a demo.
+For **developer demos** (copy-paste teaching hosts), see [`examples/`](../examples/). This directory is the Playwright e2e surface (`e2e/demo` is the harness host).
 
 ## Goal
 

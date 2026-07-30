@@ -1,6 +1,6 @@
 # photon-leptos examples
 
-Runnable teaching hosts for browser WebSocket refetch — not the Playwright surface under [`e2e/`](../e2e/). Start with the embedded refetch path; branch for secure Origin, Replace/Append, or NATS-backed Photon.
+Runnable teaching hosts for browser WebSocket refetch. Playwright lives under [`e2e/`](../e2e/). Start with the embedded refetch path; branch for secure Origin, Replace/Append, or NATS-backed Photon.
 
 All examples need transport crypto:
 
