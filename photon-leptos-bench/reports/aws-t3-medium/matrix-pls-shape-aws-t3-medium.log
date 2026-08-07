@@ -1,9 +1,0 @@
-run bm-pls4 hardware=aws-t3-medium
-bm-pls4 status=pass pass=true
-run bm-pls5 hardware=aws-t3-medium
-bm-pls5 status=pass pass=true
-run bm-pls6 hardware=aws-t3-medium
-bm-pls6 status=pass pass=true
-run bm-pls7 hardware=aws-t3-medium
-bm-pls7 status=pass pass=true
-EXIT:0

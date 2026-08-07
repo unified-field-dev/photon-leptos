@@ -4,8 +4,8 @@ WebSocket + Leptos integration benchmarks (**BM-PLS***).
 
 | Document | Role |
 |----------|------|
-| [`PERFORMANCE_STUDY.md`](PERFORMANCE_STUDY.md) | Methodology |
-| [`EXPERIMENTS.md`](EXPERIMENTS.md) | Registry and cloud results |
+| [`PERFORMANCE.md`](PERFORMANCE.md) | Methodology |
+| [`PERFORMANCE.md`](PERFORMANCE.md) | Registry and cloud results |
 | [`../infra/aws/mcp/RUNBOOK.md`](../infra/aws/mcp/RUNBOOK.md) | AWS MCP campaign |
 
 ## Quick start
