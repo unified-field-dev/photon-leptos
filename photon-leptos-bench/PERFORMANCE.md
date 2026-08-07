@@ -1,6 +1,6 @@
 # photon-leptos performance
 
-Measured on AWS instance profiles spanning burstable and compute-optimized shapes (`t3` / `t4g` / `c7i` classes). photon-leptos serves realtime UI/session traffic over Leptos/Axum with Photon underneath. Campaign notes live in the private `uf-live-cloud-lab` photon-leptos performance study.
+Measured on AWS instance profiles spanning burstable and compute-optimized shapes (`t3` / `t4g` / `c7i` classes). photon-leptos serves realtime UI/session traffic over Leptos/Axum with Photon underneath. Campaign notes come from AWS MCP bench runs.
 
 ## Serving capacity
 

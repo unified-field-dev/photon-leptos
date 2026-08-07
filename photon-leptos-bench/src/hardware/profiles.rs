@@ -1,4 +1,7 @@
-//! Load hardware profiles from infra/aws/mcp/profiles.json.
+//! Load hardware profiles for AWS MCP bench campaigns.
+//!
+//! Default: in-repo `testdata/profiles.json`. Override with
+//! `PHOTON_LEPTOS_BENCH_PROFILES` when pointing at an operator-managed file.
 
 use std::path::{Path, PathBuf};
 
@@ -34,7 +37,7 @@ pub struct HardwareProfile {
 
 pub fn profiles_path() -> PathBuf {
     std::env::var("PHOTON_LEPTOS_BENCH_PROFILES").map_or_else(
-        |_| Path::new(env!("CARGO_MANIFEST_DIR")).join("../infra/aws/mcp/profiles.json"),
+        |_| Path::new(env!("CARGO_MANIFEST_DIR")).join("testdata/profiles.json"),
         PathBuf::from,
     )
 }
