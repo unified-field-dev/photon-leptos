@@ -1,6 +1,6 @@
 [package]
 name = "photon-leptos"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 description = "Leptos integration for Photon events — synced resources and WebSocket real-time updates"
 license = "MIT"
@@ -22,8 +22,8 @@ leptos-use = { workspace = true, optional = true, features = ["use_websocket"] }
 codee = { workspace = true, optional = true }
 
 photon = { workspace = true, optional = true }
-photon-axum = { version = "0.1.2", path = "../photon-axum", optional = true }
-photon-leptos-macros = { version = "0.1.2", path = "../photon-leptos-macros" }
+photon-axum = { version = "0.1.3", path = "../photon-axum", optional = true }
+photon-leptos-macros = { version = "0.1.3", path = "../photon-leptos-macros" }
 tokio = { workspace = true, optional = true }
 quark = { workspace = true, optional = true }
 

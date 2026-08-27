@@ -21,7 +21,7 @@ cfg-if = { workspace = true }
 tracing = { workspace = true }
 dashmap = { workspace = true }
 
-photon = { package = "uf-photon", version = "=0.1.3", default-features = false, optional = true }
+photon = { package = "uf-photon", version = "=0.1.4", default-features = false, optional = true }
 photon-axum = { path = "../../photon-axum", optional = true }
 futures = { workspace = true, optional = true }
 axum = { workspace = true, optional = true }

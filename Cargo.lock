@@ -1985,7 +1985,7 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 
 [[package]]
 name = "photon-axum"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "axum",
  "futures",
@@ -2003,9 +2003,9 @@ dependencies = [
 
 [[package]]
 name = "photon-backend"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "efde3538fef9c2ef1e44fee05ca636e4dee2667063bff1a56f84da36cb78ef6a"
+checksum = "51bbf7575ee4f8e7b1e61c2ab8114be793f92cbf4def7c3e17f533aaffe93d65"
 dependencies = [
  "anyhow",
  "async-stream",
@@ -2030,9 +2030,9 @@ dependencies = [
 
 [[package]]
 name = "photon-backend-nats"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "904a86612dfef973216cd91f40507601ca35e367477be777408a0845f55c2b3c"
+checksum = "ef9d666c823406d8617a6d8fa4e2e173e0f70ea8401cc2f3d220954941d49f34"
 dependencies = [
  "async-nats",
  "async-stream",
@@ -2050,7 +2050,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "axum",
  "cfg-if",
@@ -2123,7 +2123,7 @@ dependencies = [
 
 [[package]]
 name = "photon-leptos-macros"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -2133,9 +2133,9 @@ dependencies = [
 
 [[package]]
 name = "photon-macros"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0a8bf1b35ba7931fc4d518a39d659f8e846b76baf0de537efaea50b5ee3785e"
+checksum = "57bc69fc567436274d7c4a361e6f2a80557f91f05aa61b6e7b728e27d8516837"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2144,9 +2144,9 @@ dependencies = [
 
 [[package]]
 name = "photon-runtime"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "98d4c162dcacd5bba35d6fd2c7d9cda59bd42fa31e996208c70235ac227d511c"
+checksum = "58d0f2af8bda1fa7aa8678558de391bbe107b930cad35e582897dbc435585dc2"
 dependencies = [
  "futures",
  "photon-backend",
@@ -2161,9 +2161,9 @@ dependencies = [
 
 [[package]]
 name = "photon-telemetry"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7afe9fb9043281e47d3b6241cf68f4bd7eb2faf1bc24c2aa7d4874aea0095bb3"
+checksum = "a5c5a39aabec7157deffc7a2001f9cf7996a1bf2234adcd7b3d9b78e74ff2f1c"
 dependencies = [
  "serde_json",
 ]
@@ -3758,9 +3758,9 @@ checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 
 [[package]]
 name = "uf-photon"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14b4174ce6a43b9ecfea300641225f8c90d0fff38722a89b4723a78ea9c95fff"
+checksum = "e1fbb65aacc2ab5c22190945f301a7448719b02bda720cd60459c28113a39ffb"
 dependencies = [
  "photon-backend",
  "photon-backend-nats",
@@ -3773,9 +3773,9 @@ dependencies = [
 
 [[package]]
 name = "uf-photon-core"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "38847a1222f11b93492505ce9cb8a3a4799f70662f882a99fc1d9f757ac06b2c"
+checksum = "b810fbf7082a14953a9d0e00e3c268e17ab21cf7ba0f904a39713edf8572c3e7"
 dependencies = [
  "serde",
  "serde_json",
