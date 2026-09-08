@@ -24,7 +24,7 @@ mem = ["photon-testkit/mem"]
 [dependencies]
 photon = { workspace = true }
 photon-axum = { path = "../photon-axum", features = ["runtime"] }
-photon-testkit = { git = "https://github.com/unified-field-dev/photon.git", tag = "v0.1.1", default-features = false, features = ["mem"] }
+photon-testkit = { git = "https://github.com/unified-field-dev/photon.git", branch = "main", default-features = false, features = ["mem"] }
 photon-runtime = { workspace = true }
 clap = { version = "4", features = ["derive"] }
 anyhow = { workspace = true }

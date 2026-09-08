@@ -106,11 +106,11 @@ leptos_unscoped_spawn = "deny"
 libraries = [{ git = "https://github.com/leptos-rs/leptos-lints", tag = "v0.1.2" }]
 
 [workspace.dependencies]
-quark = { package = "uf-quark", version = "0.1.2" }
+quark = { package = "uf-quark", git = "https://github.com/unified-field-dev/quark", branch = "main" }
 # Match upstream/CI: crates.io photon 0.1.4 (monorepo path pins fight photon-testkit patches).
-photon-runtime = { version = "=0.1.4", default-features = false, features = ["runtime", "mem"] }
-photon-backend = { version = "=0.1.4", default-features = false, features = ["runtime", "mem"] }
-photon = { package = "uf-photon", version = "=0.1.4", default-features = false, features = ["runtime", "mem"] }
+photon-runtime = { git = "https://github.com/unified-field-dev/photon", branch = "main", default-features = false, features = ["runtime", "mem"] }
+photon-backend = { git = "https://github.com/unified-field-dev/photon", branch = "main", default-features = false, features = ["runtime", "mem"] }
+photon = { package = "uf-photon", git = "https://github.com/unified-field-dev/photon", branch = "main", default-features = false, features = ["runtime", "mem"] }
 axum = { version = "0.8.4", features = ["ws", "tokio", "http1"] }
 futures = "0.3"
 serde = { version = "1.0", features = ["derive"] }
@@ -134,8 +134,3 @@ tower-http = { version = "0.6", features = ["fs"] }
 
 # photon-testkit is unpublished; git tag pulls workspace path crates that would
 # duplicate crates.io photon-runtime. Force those onto the registry builds.
-[patch."https://github.com/unified-field-dev/photon.git"]
-photon-runtime = { version = "=0.1.4" }
-photon-backend = { version = "=0.1.4" }
-photon-telemetry = { version = "=0.1.4" }
-uf-photon-core = { version = "=0.1.4" }

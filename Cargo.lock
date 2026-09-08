@@ -1998,14 +1998,13 @@ dependencies = [
  "tokio-tungstenite 0.26.2",
  "tower",
  "uf-photon",
- "uf-quark",
+ "uf-quark 0.1.3",
 ]
 
 [[package]]
 name = "photon-backend"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51bbf7575ee4f8e7b1e61c2ab8114be793f92cbf4def7c3e17f533aaffe93d65"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "anyhow",
  "async-stream",
@@ -2023,7 +2022,7 @@ dependencies = [
  "tokio",
  "tracing",
  "uf-photon-core",
- "uf-quark",
+ "uf-quark 0.1.2",
  "uuid",
  "zeroize",
 ]
@@ -2031,8 +2030,7 @@ dependencies = [
 [[package]]
 name = "photon-backend-nats"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef9d666c823406d8617a6d8fa4e2e173e0f70ea8401cc2f3d220954941d49f34"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "async-nats",
  "async-stream",
@@ -2068,7 +2066,7 @@ dependencies = [
  "tokio-tungstenite 0.26.2",
  "tracing",
  "uf-photon",
- "uf-quark",
+ "uf-quark 0.1.3",
 ]
 
 [[package]]
@@ -2134,8 +2132,7 @@ dependencies = [
 [[package]]
 name = "photon-macros"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57bc69fc567436274d7c4a361e6f2a80557f91f05aa61b6e7b728e27d8516837"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2145,8 +2142,7 @@ dependencies = [
 [[package]]
 name = "photon-runtime"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58d0f2af8bda1fa7aa8678558de391bbe107b930cad35e582897dbc435585dc2"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "futures",
  "photon-backend",
@@ -2162,16 +2158,15 @@ dependencies = [
 [[package]]
 name = "photon-telemetry"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5c5a39aabec7157deffc7a2001f9cf7996a1bf2234adcd7b3d9b78e74ff2f1c"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "serde_json",
 ]
 
 [[package]]
 name = "photon-testkit"
-version = "0.1.0"
-source = "git+https://github.com/unified-field-dev/photon.git?tag=v0.1.1#4ad037e4c1da56c28a49c3c4b1e063cfbd1bf256"
+version = "0.1.1"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "anyhow",
  "futures",
@@ -3759,8 +3754,7 @@ checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 [[package]]
 name = "uf-photon"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e1fbb65aacc2ab5c22190945f301a7448719b02bda720cd60459c28113a39ffb"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "photon-backend",
  "photon-backend-nats",
@@ -3768,14 +3762,13 @@ dependencies = [
  "photon-runtime",
  "photon-telemetry",
  "uf-photon-core",
- "uf-quark",
+ "uf-quark 0.1.2",
 ]
 
 [[package]]
 name = "uf-photon-core"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b810fbf7082a14953a9d0e00e3c268e17ab21cf7ba0f904a39713edf8572c3e7"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
 dependencies = [
  "serde",
  "serde_json",
@@ -3787,6 +3780,14 @@ name = "uf-quark"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e29dd3adc47fb5c0b00ec8885fdf0a7b853a0075644f1dd87c04353dbfbc6e0f"
+dependencies = [
+ "inventory",
+]
+
+[[package]]
+name = "uf-quark"
+version = "0.1.3"
+source = "git+https://github.com/unified-field-dev/quark?branch=main#90d70f612926540af402501c94624c2e90a086b8"
 dependencies = [
  "inventory",
 ]
