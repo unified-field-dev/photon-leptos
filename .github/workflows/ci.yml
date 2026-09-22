@@ -23,7 +23,7 @@ jobs:
   fmt:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
@@ -38,11 +38,11 @@ jobs:
   clippy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -62,11 +62,11 @@ jobs:
   leptos-lints:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -110,7 +110,7 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
@@ -127,11 +127,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -149,11 +149,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -173,11 +173,11 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -198,11 +198,11 @@ jobs:
   wasm-hydrate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -224,11 +224,11 @@ jobs:
     env:
       CARGO_BUILD_JOBS: 2
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: photon-leptos
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: unified-field-dev/photon
           path: photon
@@ -244,7 +244,7 @@ jobs:
         with:
           tool: cargo-leptos
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: npm
@@ -259,7 +259,7 @@ jobs:
         working-directory: photon-leptos/e2e/tests
         run: echo "version=$(node -p "require('./package-lock.json').packages['node_modules/@playwright/test'].version")" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -280,7 +280,7 @@ jobs:
 
       - name: Upload Playwright artifacts on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-artifacts-${{ github.run_id }}
           path: |
