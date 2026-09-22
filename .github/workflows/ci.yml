@@ -124,6 +124,23 @@ jobs:
         working-directory: photon-leptos
         run: cargo audit
 
+  deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: photon-leptos
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-deny
+
+      - name: cargo deny
+        working-directory: photon-leptos
+        run: cargo deny check
+
   test:
     runs-on: ubuntu-latest
     steps:
