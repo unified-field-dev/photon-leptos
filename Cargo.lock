@@ -2004,7 +2004,7 @@ dependencies = [
 [[package]]
 name = "photon-backend"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "anyhow",
  "async-stream",
@@ -2030,7 +2030,7 @@ dependencies = [
 [[package]]
 name = "photon-backend-nats"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "async-nats",
  "async-stream",
@@ -2132,7 +2132,7 @@ dependencies = [
 [[package]]
 name = "photon-macros"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2142,7 +2142,7 @@ dependencies = [
 [[package]]
 name = "photon-runtime"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "futures",
  "photon-backend",
@@ -2158,7 +2158,7 @@ dependencies = [
 [[package]]
 name = "photon-telemetry"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "serde_json",
 ]
@@ -2166,7 +2166,7 @@ dependencies = [
 [[package]]
 name = "photon-testkit"
 version = "0.1.1"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "anyhow",
  "futures",
@@ -3754,7 +3754,7 @@ checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 [[package]]
 name = "uf-photon"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "photon-backend",
  "photon-backend-nats",
@@ -3768,7 +3768,7 @@ dependencies = [
 [[package]]
 name = "uf-photon-core"
 version = "0.1.4"
-source = "git+https://github.com/unified-field-dev/photon?branch=main#d8942b609e86cefdfbbf4ad105be7291f8fee908"
+source = "git+https://github.com/unified-field-dev/photon?branch=main#b8eae83f25704e104af8958174d9bc3ff5c7824a"
 dependencies = [
  "serde",
  "serde_json",
@@ -3787,7 +3787,7 @@ dependencies = [
 [[package]]
 name = "uf-quark"
 version = "0.1.3"
-source = "git+https://github.com/unified-field-dev/quark?branch=main#90d70f612926540af402501c94624c2e90a086b8"
+source = "git+https://github.com/unified-field-dev/quark?branch=main#8f4cd00aaff350c8e718afb80ea40582f7ee971e"
 dependencies = [
  "inventory",
 ]
