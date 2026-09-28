@@ -213,6 +213,11 @@ jobs:
         working-directory: e2e/tests
         run: npx playwright install --with-deps
 
+      - name: Install Playwright OS deps when cache hit
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        working-directory: e2e/tests
+        run: npx playwright install-deps
+
       - name: cargo leptos build
         run: cargo leptos build --project photon-leptos-e2e
 
