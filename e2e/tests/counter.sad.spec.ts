@@ -1,4 +1,4 @@
-import { expect, pageUrl, test } from "./fixtures";
+import { expect, pageUrl, test, waitForWsOpen } from "./fixtures";
 
 test("server fn error surfaces in UI", async ({ page, request, namespace }) => {
   await request.post("/api/e2e/scenario", {
@@ -23,6 +23,7 @@ test("publish failure leaves counter unchanged", async ({
 
   await page.goto(pageUrl(namespace));
   await expect(page.getByTestId("counter-value")).toHaveText("0");
+  await waitForWsOpen(page);
 
   const response = await request.post("/api/counter/increment", {
     data: { namespace },
@@ -53,21 +54,9 @@ test("WS disconnect recovers on next publish", async ({
   request,
   namespace,
 }) => {
-  await page.addInitScript(() => {
-    const Original = WebSocket;
-    const sockets: WebSocket[] = [];
-    (window as unknown as { __e2eSockets: WebSocket[] }).__e2eSockets = sockets;
-    window.WebSocket = class extends Original {
-      constructor(...args: ConstructorParameters<typeof WebSocket>) {
-        super(...args);
-        sockets.push(this);
-      }
-    } as typeof WebSocket;
-  });
-
   await page.goto(pageUrl(namespace));
   await expect(page.getByTestId("counter-value")).toHaveText("0");
-  await expect(page.getByTestId("ws-status")).toHaveText("connected");
+  await waitForWsOpen(page);
 
   await page.evaluate(() => {
     for (const ws of (window as unknown as { __e2eSockets: WebSocket[] })
@@ -85,6 +74,7 @@ test("WS disconnect recovers on next publish", async ({
   await expect(page.getByTestId("counter-value")).toHaveText("1", {
     timeout: 10_000,
   });
+  await waitForWsOpen(page);
 
   await request.post("/api/counter/increment", { data: { namespace } });
   await expect(page.getByTestId("counter-value")).toHaveText("2", {

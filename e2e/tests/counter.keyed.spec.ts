@@ -1,4 +1,4 @@
-import { expect, test } from "./fixtures";
+import { expect, test, trackWebSockets, waitForWsOpen } from "./fixtures";
 
 const baseURL = process.env.LEPTOS_SITE_ADDR
   ? `http://${process.env.LEPTOS_SITE_ADDR}`
@@ -16,6 +16,7 @@ async function openKeyedPage(
   extra: KeyedCookies,
 ) {
   const context = await browser.newContext();
+  await context.addInitScript(trackWebSockets);
   const cookies: Parameters<typeof context.addCookies>[0] = [
     { name: "e2e_ns", value: namespace, url: baseURL },
   ];
@@ -47,6 +48,8 @@ async function openKeyedPair(
   const right = await openKeyedPage(browser, namespace, path, b);
   await expect(left.page.getByTestId("counter-value")).toHaveText("0");
   await expect(right.page.getByTestId("counter-value")).toHaveText("0");
+  await waitForWsOpen(left.page);
+  await waitForWsOpen(right.page);
   return {
     pageA: left.page,
     pageB: right.page,
@@ -177,6 +180,7 @@ test("auth+key mismatch rejected while peer still receives", async ({
         .getByTestId("counter-value")
         .or(bad.page.getByTestId("counter-loading")),
     ).toBeVisible({ timeout: 10_000 });
+    await waitForWsOpen(good.page);
 
     await publishKeyed(request, namespace, "1234");
     await expect(good.page.getByTestId("counter-value")).toHaveText("1", {
@@ -206,6 +210,7 @@ test("auth=user without identity rejected while peer receives", async ({
 
   try {
     await expect(good.page.getByTestId("counter-value")).toHaveText("0");
+    await waitForWsOpen(good.page);
 
     await publishKeyed(request, namespace, "1234");
     await expect(good.page.getByTestId("counter-value")).toHaveText("1", {

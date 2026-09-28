@@ -1,4 +1,4 @@
-import { expect, pageUrl, test } from "../fixtures";
+import { expect, pageUrl, test, waitForWsOpen } from "../fixtures";
 
 /**
  * Playwright subset for BM-PLS2 — browser multi-tab connection sanity.
@@ -15,6 +15,9 @@ test.describe("bench pls2 browser subset", () => {
       for (const p of pages) {
         await p.goto(url);
         await expect(p.getByTestId("counter-value")).toHaveText("0");
+      }
+      for (const p of pages) {
+        await waitForWsOpen(p);
       }
 
       await request.post("/api/counter/increment", { data: { namespace } });

@@ -1,4 +1,4 @@
-import { expect, pageUrl, test } from "../fixtures";
+import { expect, pageUrl, test, waitForWsOpen } from "../fixtures";
 
 /**
  * Playwright subset for BM-PLS3 — refetch path (WS → server fn → UI update).
@@ -6,6 +6,7 @@ import { expect, pageUrl, test } from "../fixtures";
 test("bench pls3 refetch latency smoke", async ({ page, request, namespace }) => {
   await page.goto(pageUrl(namespace));
   await expect(page.getByTestId("counter-value")).toHaveText("0");
+  await waitForWsOpen(page);
 
   const t0 = Date.now();
   await request.post("/api/counter/increment", { data: { namespace } });

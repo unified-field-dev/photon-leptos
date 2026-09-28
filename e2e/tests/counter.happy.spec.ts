@@ -1,4 +1,4 @@
-import { expect, pageUrl, test } from "./fixtures";
+import { expect, pageUrl, test, waitForWsOpen } from "./fixtures";
 
 test("publish → WS → refetch updates counter", async ({
   page,
@@ -7,6 +7,7 @@ test("publish → WS → refetch updates counter", async ({
 }) => {
   await page.goto(pageUrl(namespace));
   await expect(page.getByTestId("counter-value")).toHaveText("0");
+  await waitForWsOpen(page);
 
   await request.post("/api/counter/increment", { data: { namespace } });
 
@@ -28,6 +29,8 @@ test("second tab receives WS update without second increment", async ({
   const page2 = await context.newPage();
   await page2.goto(url);
   await expect(page2.getByTestId("counter-value")).toHaveText("0");
+  await waitForWsOpen(page);
+  await waitForWsOpen(page2);
 
   await request.post("/api/counter/increment", { data: { namespace } });
 

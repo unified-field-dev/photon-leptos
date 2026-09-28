@@ -94,12 +94,10 @@ fn SyncedCounterView(
     provide_context(namespace());
     sync_cookies(&namespace(), None, None);
 
-    let ws_status = RwSignal::new("connected".to_string());
     let trigger = crate::counter::subscribe_counter_get(|| {});
     let counter = Resource::new(move || trigger.get(), move |_| counter_get());
 
     view! {
-        <span data-testid="ws-status">{move || ws_status.get()}</span>
         <CounterDisplay resource=counter />
     }
 }
