@@ -1,10 +1,17 @@
 # Transitive rustls-webpki 0.102 via crates.io photon-backend-nats → async-nats 0.38.
 # Cleared when photon-backend-nats is republished on async-nats >= 0.50.
 # Cannot git-patch photon-backend-nats alone: main nats needs unpublished PhotonError::caused.
+#
+# paste and proc-macro-error2 are unmaintained, transitive via leptos
+# (either_of / leptos_macro); mirrors the ignores in deny.toml, since cargo
+# audit doesn't read that file. No safe replacement without leptos dropping
+# them upstream.
 [advisories]
 ignore = [
     "RUSTSEC-2026-0049",
     "RUSTSEC-2026-0098",
     "RUSTSEC-2026-0099",
     "RUSTSEC-2026-0104",
+    "RUSTSEC-2024-0436",
+    "RUSTSEC-2026-0173",
 ]
